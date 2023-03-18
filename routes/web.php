@@ -15,6 +15,9 @@ use App\Http\Controllers\CartController;
 */
 
 Route::get('/', [ProductController::class, 'index']);
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add');
 
 

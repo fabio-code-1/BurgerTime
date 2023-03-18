@@ -16,7 +16,13 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->description }}</td>
-            <td><button>Adicionar produto</button></td>
+            <td>
+                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <button type="submit">Adicionar produto</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
