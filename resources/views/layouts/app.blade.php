@@ -1,15 +1,13 @@
 <html>
+
 <head>
     <title>BurgerTime</title>
 </head>
+
 <body>
     <header>
-        <!-- Cabeçalho do site -->
+        @include('includes.navbar')
     </header>
-
-    <nav>
-    NAV
-    </nav>
 
     <main>
         @yield('content')
@@ -19,4 +17,5 @@
         FOOTER
     </footer>
 </body>
+
 </html>

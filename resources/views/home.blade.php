@@ -7,6 +7,7 @@
             <th>Nome</th>
             <th>Preço</th>
             <th>Descrição</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->description }}</td>
+            <td><button>Adicionar produto</button></td>
         </tr>
         @endforeach
     </tbody>
