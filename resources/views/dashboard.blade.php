@@ -24,4 +24,6 @@
         @endforeach
     </tbody>
 </table>
+
+<h2>Total da compra : {{$totalPrice}}</h2>
 @endsection
