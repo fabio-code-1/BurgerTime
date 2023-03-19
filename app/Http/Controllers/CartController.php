@@ -54,25 +54,55 @@ class CartController extends Controller
         $productPrice = Product::findOrFail($productId)->price;
 
         // Verifica se o produto já existe no carrinho
-        $cartItem = Cart::where('product_id', $productId)
+        $cart = Cart::where('product_id', $productId)
             ->where('user_id', $user->id)
             ->first();
 
-        if ($cartItem) {
+        if ($cart) {
             // Se o produto já existe no carrinho do usuário autenticado, atualiza a quantidade de itens
-            $cartItem->quantity += $quantity;
-            $cartItem->save();
+            $cart->quantity += $quantity;
+            $cart->save();
         } else {
             // Se o produto não existe no carrinho do usuário autenticado, cria um novo item
             $cart = $user->cart ?: new Cart(['user_id' => $user->id]);
-            $cart->items()->create([
-                'product_id' => $productId,
-                'quantity' => $quantity,
-                'price' => $productPrice
-            ]);
+            $cart->product_id = $productId;
+            $cart->quantity = $quantity;
+            $cart->price += $productPrice * $quantity;
+            $cart->save();
         }
 
         // Redireciona o usuário para a página do carrinho
         return redirect()->route('dashboard');
+    }
+
+
+    public function delete()
+    {
+        // Recupera o usuário autenticado
+        $user = auth()->user();
+
+        // Recupera todos os itens do carrinho que pertencem ao usuário autenticado
+        $cartItems = Cart::where('user_id', $user->id)->get();
+
+        // Percorre todos os itens do carrinho e os deleta
+        foreach ($cartItems as $cartItem) {
+            $cartItem->delete();
+        }
+
+        // Redireciona o usuário para a página do carrinho com uma mensagem de sucesso
+        return redirect()->route('dashboard')->with('success', 'Todos os itens do carrinho foram deletados com sucesso!');
+    }
+
+    public function deleteOne($id)
+    {
+        $cartItem = Cart::findOrFail($id);
+
+        if (auth()->id() !== $cartItem->user_id) {
+            return redirect()->route('dashboard')->with('error', 'Você não tem permissão para excluir este item do carrinho!');
+        }
+
+        $cartItem->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Item do carrinho excluído com sucesso!');
     }
 }

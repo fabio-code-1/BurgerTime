@@ -17,6 +17,9 @@ use App\Http\Controllers\CartController;
 Route::get('/', [ProductController::class, 'index']);
 
 Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add')->middleware('auth');
+Route::get('/cart/delete', [CartController::class, 'delete'])->name('cart.delete');
+Route::delete('/cart/{id}', [CartController::class, 'deleteOne'])->name('cart.deleteOne');
+
 
 
 Route::get('/dashboard', [CartController::class, 'dashboard'])->name('dashboard');

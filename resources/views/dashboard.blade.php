@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>dashboad</h1>
+<h1>dashboad</h1>
 
-    <h1>Carrinho</h1>
+<h1>Carrinho</h1>
+
+<a href="{{ route('cart.delete') }}">Apagar todos os itens do carrinho</a>
+
+
 <table>
     <thead>
         <tr>
@@ -11,6 +15,7 @@
             <th>Preço</th>
             <th>Quantidade</th>
             <th>Total</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +25,13 @@
             <td>R$ {{ number_format($item->product->price, 2, ',', '.') }}</td>
             <td>{{ $item->quantity }}</td>
             <td>R$ {{ number_format($item->product->price * $item->quantity, 2, ',', '.') }}</td>
+            <td>
+                <form method="POST" action="{{ route('cart.deleteOne', $item->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
