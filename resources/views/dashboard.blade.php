@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Carrinho</h1>
+    <h1>dashboad</h1>
+
+    <h1>Carrinho</h1>
 <table>
     <thead>
         <tr>
@@ -22,5 +24,4 @@
         @endforeach
     </tbody>
 </table>
-
 @endsection

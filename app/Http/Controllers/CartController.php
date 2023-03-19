@@ -8,12 +8,22 @@ use App\Models\Cart;
 
 class CartController extends Controller
 {
-    public function index()
+ 
+    public function dashboard()
     {
-        $cartItems = Cart::where('user_id', auth()->id())->with('product')->get();
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
 
-        return view('cart', compact('cartItems'));
+        $cartItems = Cart::where('user_id', auth()->id())->with('product')->get();
+        $totalPrice = $cartItems->sum(function ($item) {
+            return $item->quantity * $item->product->price;
+        });
+
+        return view('dashboard', compact('cartItems', 'totalPrice'));
     }
+
+
 
     public function store(Request $request)
     {
@@ -23,20 +33,26 @@ class CartController extends Controller
         // Verifica se o produto já existe no carrinho
         $cartItem = Cart::where('product_id', $productId)->first();
 
+        // Recupera o id do usuário autenticado
+        $userId = auth()->id();
+
+        // Recupera a quantidade a ser adicionada ao carrinho
+        $quantity = $request->input('quantity', 1); // valor padrão é 1
+
         if ($cartItem) {
             // Se o produto já existe no carrinho, atualiza a quantidade de itens
-            $cartItem->quantity += 1;
+            $cartItem->quantity += $quantity;
             $cartItem->save();
         } else {
             // Se o produto não existe no carrinho, cria um novo item
             Cart::create([
-                'user_id' => 1,
+                'user_id' => $userId,
                 'product_id' => $productId,
-                'quantity' => 1
+                'quantity' => $quantity
             ]);
         }
 
         // Redireciona o usuário para a página do carrinho
-        return redirect()->route('cart.index');
+        return redirect()->route('dashboard');
     }
 }

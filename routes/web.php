@@ -16,8 +16,19 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [ProductController::class, 'index']);
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add');
+Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add')->middleware('auth');
 
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/dashboard', [CartController::class, 'dashboard'])->name('dashboard');
 
