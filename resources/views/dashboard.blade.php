@@ -38,4 +38,15 @@
 </table>
 
 <h2>Total da compra : {{$totalPrice}}</h2>
+
+<h3>Enviar pedido pelo WhatsApp</h3>
+<a href="{{ route('whatsapp.send') }}" target="_blank" >Enviar pedido</a>
+
+
+
+
+   
+
+
+
 @endsection

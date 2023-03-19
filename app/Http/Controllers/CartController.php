@@ -95,14 +95,18 @@ class CartController extends Controller
 
     public function deleteOne($id)
     {
+        // Encontra o item do carrinho a ser excluído pelo ID
         $cartItem = Cart::findOrFail($id);
 
+        // Verifica se o usuário logado tem permissão para excluir o item do carrinho
         if (auth()->id() !== $cartItem->user_id) {
             return redirect()->route('dashboard')->with('error', 'Você não tem permissão para excluir este item do carrinho!');
         }
 
+        // Deleta o item do carrinho
         $cartItem->delete();
 
+        // Redireciona o usuário para a página do carrinho com uma mensagem de sucesso
         return redirect()->route('dashboard')->with('success', 'Item do carrinho excluído com sucesso!');
     }
 }

@@ -14,7 +14,7 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->price }}</td>
+            <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
             <td>{{ $product->description }}</td>
             <td>
                 <form action="{{ route('cart.add', $product->id) }}" method="POST">
