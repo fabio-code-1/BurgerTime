@@ -6,7 +6,8 @@
 <h1>Carrinho</h1>
 
 <a href="{{ route('cart.delete') }}">Apagar todos os itens do carrinho</a>
-
+<h4>cadastrar endereço</h4>
+<h4><a href="{{ route('endereco.create') }}">Cadastrar endereço</a></h4>
 
 <table>
     <thead>

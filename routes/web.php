@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\WhatsAppController;
-
+use App\Http\Controllers\EnderecoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,6 @@ Route::delete('/cart/{id}', [CartController::class, 'deleteOne'])->name('cart.de
 Route::get('/dashboard', [CartController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/whatsapp/send-message', [WhatsAppController::class, 'sendWhatsAppMessage'])->name('whatsapp.send');
+
+Route::get('/endereco/create', [EnderecoController::class, 'create'])->name('endereco.create');
+Route::post('/address', [\App\Http\Controllers\EnderecoController::class, 'store'])->name('address.store');
