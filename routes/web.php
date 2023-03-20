@@ -28,3 +28,6 @@ Route::get('/whatsapp/send-message', [WhatsAppController::class, 'sendWhatsAppMe
 
 Route::get('/endereco/create', [EnderecoController::class, 'create'])->name('endereco.create');
 Route::post('/address', [\App\Http\Controllers\EnderecoController::class, 'store'])->name('address.store');
+Route::get('/address/{id}/edit', [\App\Http\Controllers\EnderecoController::class, 'edit'])->name('endereco.edit');
+Route::put('/address/{id}', [\App\Http\Controllers\EnderecoController::class, 'update'])->name('address.update');
+

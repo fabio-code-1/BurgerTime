@@ -1,14 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>dashboad</h1>
 
-<h1>Carrinho</h1>
+@if(isset($endereco))
+<h4>
+    Seu Endereço:
+</h4>
+    <p>{{ $endereco->rua }}, {{ $endereco->numero }}, {{ $endereco->complemento }}</p>
+    <p>{{ $endereco->cidade }} - {{ $endereco->estado }}, {{ $endereco->cep }}</p>
+    <a href="{{ route('endereco.edit', ['id' => $endereco->id]) }}">Editar Endereço</a>
+@else
+    <h4>
+        Cadastrar Endereço
+        <a href="{{ route('endereco.create') }}">clique aqui!</a>
+    </h4>
+@endif
 
+
+
+<h2>Carrinho</h2>
 <a href="{{ route('cart.delete') }}">Apagar todos os itens do carrinho</a>
-<h4>cadastrar endereço</h4>
-<h4><a href="{{ route('endereco.create') }}">Cadastrar endereço</a></h4>
-
 <table>
     <thead>
         <tr>
@@ -41,12 +52,12 @@
 <h2>Total da compra : {{$totalPrice}}</h2>
 
 <h3>Enviar pedido pelo WhatsApp</h3>
-<a href="{{ route('whatsapp.send') }}" target="_blank" >Enviar pedido</a>
+<a href="{{ route('whatsapp.send') }}" target="_blank">Enviar pedido</a>
 
 
 
 
-   
+
 
 
 

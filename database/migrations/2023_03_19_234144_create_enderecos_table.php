@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('complemento')->nullable();
             $table->string('cidade');
             $table->string('estado');
+            $table->string('bairro')->nullable();
             $table->string('cep');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();

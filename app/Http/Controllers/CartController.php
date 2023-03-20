@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Endereco;
 
 class CartController extends Controller
 {
@@ -24,8 +25,11 @@ class CartController extends Controller
             return $item->quantity * $item->product->price;
         });
 
-        // Carrega a view com os itens do carrinho do usuário autenticado
-        return view('dashboard', compact('cartItems', 'totalPrice'));
+        // Recupera o endereço do usuário autenticado
+        $endereco = Endereco::where('user_id', auth()->user()->id)->first();
+
+        // Carrega a view com os itens do carrinho e o endereço do usuário autenticado
+        return view('dashboard', compact('cartItems', 'totalPrice', 'endereco'));
     }
 
 
@@ -109,4 +113,6 @@ class CartController extends Controller
         // Redireciona o usuário para a página do carrinho com uma mensagem de sucesso
         return redirect()->route('dashboard')->with('success', 'Item do carrinho excluído com sucesso!');
     }
+
+    
 }
