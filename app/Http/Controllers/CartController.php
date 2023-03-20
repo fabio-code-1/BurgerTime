@@ -76,7 +76,7 @@ class CartController extends Controller
         }
 
         // Redireciona o usuário para a página do carrinho
-        return redirect()->route('dashboard');
+        return redirect()->route('home');
     }
 
 

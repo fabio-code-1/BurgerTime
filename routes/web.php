@@ -16,7 +16,7 @@ use App\Http\Controllers\EnderecoController;
 |
 */
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/', [ProductController::class, 'index'])->name('home');
 
 Route::post('/cart/add', [CartController::class, 'store'])->name('cart.add')->middleware('auth');
 Route::get('/cart/delete', [CartController::class, 'delete'])->name('cart.delete');
