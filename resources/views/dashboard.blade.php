@@ -8,6 +8,9 @@
 </h4>
     <p>{{ $endereco->rua }}, {{ $endereco->numero }}, {{ $endereco->complemento }}</p>
     <p>{{ $endereco->cidade }} - {{ $endereco->estado }}, {{ $endereco->cep }}</p>
+    <!-- Exibindo o valor do frete -->
+    <p>Valor do frete: R$ {{ number_format($endereco->frete, 2, ',', '.') }}</p>
+
     <a href="{{ route('endereco.edit', ['id' => $endereco->id]) }}">Editar Endereço</a>
 @else
     <h4>
@@ -49,7 +52,10 @@
     </tbody>
 </table>
 
-<h2>Total da compra : {{$totalPrice}}</h2>
+@if($cartItems->isNotEmpty())
+    <h2>Total da compra: {{ $totalPrice }}</h2>
+@endif
+
 
 <h3>Enviar pedido pelo WhatsApp</h3>
 <a href="{{ route('whatsapp.send') }}" target="_blank">Enviar pedido</a>

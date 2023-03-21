@@ -29,9 +29,10 @@
     </tbody>
 </table>
 
-@if($cartCount > 0)
+@if(Auth::check() && $cartCount > 0)
     <a href="{{ route('dashboard') }}">Carrinho ({{ $cartCount }})</a>
 @endif
+
 
 
 

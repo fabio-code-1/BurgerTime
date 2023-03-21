@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Endereco;
+use App\Models\Bairro;
 
 class CartController extends Controller
 {
@@ -27,6 +28,9 @@ class CartController extends Controller
 
         // Recupera o endereço do usuário autenticado
         $endereco = Endereco::where('user_id', auth()->user()->id)->first();
+
+        // Adiciona o valor do frete ao preço total
+        $totalPrice += $endereco->frete;
 
         // Carrega a view com os itens do carrinho e o endereço do usuário autenticado
         return view('dashboard', compact('cartItems', 'totalPrice', 'endereco'));
@@ -113,6 +117,4 @@ class CartController extends Controller
         // Redireciona o usuário para a página do carrinho com uma mensagem de sucesso
         return redirect()->route('dashboard')->with('success', 'Item do carrinho excluído com sucesso!');
     }
-
-    
 }

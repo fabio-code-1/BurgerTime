@@ -1,4 +1,4 @@
-<script src="/resources/js/address.js"></script>
+
 <form method="POST" action="{{ route('address.store') }}">
     @csrf
     <div class="form-group">
@@ -18,8 +18,17 @@
         <input type="text" class="form-control" id="complemento" name="complemento">
     </div>
     <div class="form-group">
-        <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" required>
+        <label for="bairro">Bairro:</label>
+
+        <select name="bairro" id="bairro" required>
+            <option value="" selected>Selecione um bairro</option>
+            @foreach($bairros as $bairro)
+            <option value="{{ $bairro->nome }}" data-frete="{{ $bairro->valor_frete }}">
+                {{ $bairro->nome }} - {{ number_format($bairro->valor_frete, 2, ',', '.') }} R$
+            </option>
+            @endforeach
+        </select>
+        <input type="hidden" name="valor_frete" id="valor_frete">
     </div>
     <div class="form-group">
         <label for="cidade">Cidade</label>
@@ -29,10 +38,6 @@
         <label for="estado">Estado</label>
         <input type="text" class="form-control" id="estado" name="estado" required>
     </div>
-
-
-
-
     <button type="submit">Salvar</button>
 </form>
 
@@ -66,5 +71,12 @@
 
     document.getElementById('cep').addEventListener('blur', function() {
         consultaCep(this.value);
+    });
+</script>
+
+<script>
+    document.getElementById('bairro').addEventListener('change', function() {
+        var frete = this.options[this.selectedIndex].getAttribute('data-frete');
+        document.getElementById('valor_frete').value = frete;
     });
 </script>

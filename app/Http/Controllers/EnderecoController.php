@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Endereco;
-
+use App\Models\Bairro;
 
 class EnderecoController extends Controller
 {
     public function create()
     {
-        return view('endereco.create');
+        $bairros = Bairro::all();
+        return view('endereco.create', compact('bairros'));
     }
 
     public function store(Request $request)
@@ -21,6 +22,8 @@ class EnderecoController extends Controller
         $endereco->complemento = $request->input('complemento');
         $endereco->cidade = $request->input('cidade');
         $endereco->estado = $request->input('estado');
+        $endereco->bairro = $request->input('bairro');
+        $endereco->frete = $request->input('valor_frete');
         $endereco->cep = $request->input('cep');
         $endereco->user_id = auth()->user()->id;
         $endereco->save();
@@ -31,7 +34,8 @@ class EnderecoController extends Controller
     public function edit($id)
     {
         $address = Endereco::find($id);
-        return view('endereco.edit', compact('address'));
+        $bairros = Bairro::all();
+        return view('endereco.edit', compact('address', 'bairros'));
     }
 
 
@@ -45,6 +49,7 @@ class EnderecoController extends Controller
         $endereco->bairro = $request->input('bairro');
         $endereco->cidade = $request->input('cidade');
         $endereco->estado = $request->input('estado');
+        $endereco->frete = $request->input('valor_frete');
         $endereco->save();
 
         return redirect()->route('dashboard');

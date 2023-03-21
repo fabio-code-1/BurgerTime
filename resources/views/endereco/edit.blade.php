@@ -17,10 +17,18 @@
         <label for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento" name="complemento" value="{{ $address->complemento }}">
     </div>
-    <div class="form-group">
-        <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" value="{{ $address->bairro }}" required>
-    </div>
+
+    <select name="bairro" id="bairro" required>
+        <option value="" selected>Selecione um bairro</option>
+        @foreach($bairros as $bairro)
+        <option value="{{ $bairro->nome }}" data-frete="{{ $bairro->valor_frete }}" @if($bairro->valor_frete == $address->frete) selected @endif>
+            {{ $bairro->nome }} - {{ number_format($bairro->valor_frete, 2, ',', '.') }} R$
+        </option>
+        @endforeach
+    </select>
+
+    <input type="hidden" name="valor_frete" id="valor_frete" value="{{ $address->frete }}">
+
     <div class="form-group">
         <label for="cidade">Cidade</label>
         <input type="text" class="form-control" id="cidade" name="cidade" value="{{ $address->cidade }}" required>
@@ -31,3 +39,11 @@
     </div>
     <button type="submit">Salvar</button>
 </form>
+
+<script>
+    // Evento para atualizar o campo hidden do valor do frete
+    document.getElementById('bairro').addEventListener('change', function() {
+        var frete = this.options[this.selectedIndex].getAttribute('data-frete');
+        document.getElementById('valor_frete').value = frete;
+    });
+</script>
