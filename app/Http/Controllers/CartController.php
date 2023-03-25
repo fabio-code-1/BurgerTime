@@ -30,7 +30,10 @@ class CartController extends Controller
         $endereco = Endereco::where('user_id', auth()->user()->id)->first();
 
         // Adiciona o valor do frete ao preço total
-        $totalPrice += $endereco->frete;
+        if ($endereco) {
+            $totalPrice += $endereco->frete;
+        }
+        
 
         // Carrega a view com os itens do carrinho e o endereço do usuário autenticado
         return view('dashboard', compact('cartItems', 'totalPrice', 'endereco'));
