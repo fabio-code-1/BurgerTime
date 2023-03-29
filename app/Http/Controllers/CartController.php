@@ -83,7 +83,7 @@ class CartController extends Controller
         }
 
         // Redireciona o usuário para a página do carrinho
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Itens adicionado ao carrinho com sucesso!');
     }
 
 

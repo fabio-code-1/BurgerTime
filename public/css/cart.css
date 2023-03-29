@@ -1,0 +1,9 @@
+/* Aplica o estilo padrão para o botão em dispositivos maiores que 500px */
+.cart {
+  position: fixed;
+  bottom: 2px;
+  left: 2px;
+  padding: 10px;
+  z-index: 9;
+}
+

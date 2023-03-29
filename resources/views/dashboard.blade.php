@@ -2,14 +2,7 @@
 
 @section('content')
 
-<div class="toast align-items-center text-center mx-auto text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex">
-        <div class="toast-body w-auto">
-            {{ session('success') }}
-        </div>
-        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-</div>
+
 
 
 @if(isset($endereco))
@@ -32,7 +25,7 @@
 
 
 <h2 class="text-center mb-3">Carrinho</h2>
-<div class="cart">
+<div class="cart-user">
     @if(count($cartItems) > 0)
         <a href="{{ route('cart.delete') }}" class="cart__clear">Apagar todos os itens do carrinho</a>
         <table class="cart__table">
