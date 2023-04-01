@@ -4,6 +4,7 @@
 
 
 
+<div style="margin-top: 10%;"></div>
 
 @if(isset($endereco))
 <h4>
@@ -83,7 +84,8 @@
 
     <br>
 
-    <button type="submit" class="btn btn-primary">Enviar pedido</button>
+    <button type="submit" class="btn btn-primary {{ count($cartItems) == 0 ? 'disabled' : '' }}">Enviar pedido</button>
+
 </form>
 
 

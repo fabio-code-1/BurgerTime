@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Events</h2>
-            <p>Organize Your Events in our Restaurant</p>
+            <h2>Eventos</h2>
+            <p>Organize os seus eventos no nosso restaurante</p>
         </div>
 
         <div class="events-slider swiper" data-aos="fade-up" data-aos-delay="100">

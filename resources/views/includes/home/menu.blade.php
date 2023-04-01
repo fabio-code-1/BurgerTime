@@ -3,7 +3,7 @@
 
         <div class="section-title">
             <h2>Menu</h2>
-            <p>Check Our Tasty Menu</p>
+            <p>Confira Nosso Saboroso Menu</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -20,7 +20,10 @@
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
             @foreach ($products as $product)
             <div class="col-lg-6 menu-item {{$product->filter}}">
-                <img src="{{ asset('img/menu/' . $product->image) }}" class="menu-img" alt="">
+                <a href="#" class="menu-img-link" data-bs-toggle="modal" data-bs-target="#productModal" data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}" data-image="{{ asset('img/menu/' . $product->image) }}" data-description="{{ $product->description }}">
+                    <img src="{{ asset('img/menu/' . $product->image) }}" class="menu-img" alt="">
+                </a>
+
                 <div class="menu-content">
                     <a href="#" class="product-name" data-bs-toggle="modal" data-bs-target="#productModal" data-id="{{ $product->id }}" data-name="{{ $product->name }}" data-price="{{ $product->price }}" data-image="{{ asset('img/menu/' . $product->image) }}" data-description="{{ $product->description }}">
                         {{ $product->name }}
@@ -39,6 +42,7 @@
 
     </div>
 </section>
+
 
 @if(Auth::check() && $cartCount > 0)
 <div class="cart">

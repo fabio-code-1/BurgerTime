@@ -12,6 +12,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- home CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/home/animate.css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/home/aos/aos.css') }}">
@@ -26,6 +29,9 @@
 
     <!-- cart -->
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}">
+
+    <!--modal -->
+    <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 
 </head>
 
@@ -49,21 +55,26 @@
         </div>
     </div>
 
-   
+
 
 
     <header id="header" class="fixed-top d-flex align-items-cente">
         @include('includes.navbar')
     </header>
 
+    @if(Request::is('/'))
     <!-- hero -->
     @include('includes.home.hero')
+    @endif
 
-     <!-- toast -->
-    @include('includes.toast')
-    
+
+
+
 
     <main id="main">
+        <!-- toast -->
+        @include('includes.toast')
+        
         @yield('content')
     </main>
 

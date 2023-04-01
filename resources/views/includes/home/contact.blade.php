@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Contact</h2>
-            <p>Contact Us</p>
+            <h2>Contato</h2>
+            <p>Contate-nos</p>
         </div>
     </div>
 

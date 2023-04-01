@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Testimonials</h2>
-            <p>What they're saying about us</p>
+            <h2>Testemunhos</h2>
+            <p>O que eles estão dizendo sobre nós</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">

@@ -3,7 +3,7 @@
     <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
         <div class="row">
             <div class="col-lg-8">
-                <h1>Bem-Vindo ao <span>BurgeTime</span></h1>
+                <h1>Bem-Vindo ao <span>BurgerTime</span></h1>
                 <h2>Entregando boa comida por mais de 18 anos!</h2>
 
                 <div class="btns">

@@ -3,8 +3,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Why Us</h2>
-          <p>Why Choose Our Restaurant</p>
+          <h2>Por que nós</h2>
+          <p>Por que escolher nosso restaurante</p>
         </div>
 
         <div class="row">

@@ -3,8 +3,8 @@
      <div class="container" data-aos="fade-up">
 
          <div class="section-title">
-             <h2>Specials</h2>
-             <p>Check Our Specials</p>
+             <h2>Especiais</h2>
+             <p>Confira nossas promoções</p>
          </div>
 
          <div class="row" data-aos="fade-up" data-aos-delay="100">

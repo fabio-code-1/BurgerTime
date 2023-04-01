@@ -3,8 +3,8 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Reservation</h2>
-            <p>Book a Table</p>
+            <h2>Reserva</h2>
+            <p>Reservar uma mesa</p>
         </div>
 
         <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">

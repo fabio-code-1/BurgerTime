@@ -1,0 +1,34 @@
+.modal-header {
+    background-color: #0c0b09;
+}
+
+.modal-body {
+    background-color: #1a1814;
+}
+
+.paragrafh-model {
+    font-weight: bold;
+    color: white;
+}
+
+.product-price,
+.product-description,
+.modal-title {
+    color: #cda45e;
+}
+
+.quantity-input,.minus-btn,.plus-btn{
+    background: #0c0b09;
+    border-color: #625b4b;
+    color: white;
+}
+
+.quantity-input:focus{
+    background: #0c0b09;
+    border-color: #625b4b;
+    color: white;
+}
+
+.plus-btn:hover, .minus-btn:hover{
+    background: #90743d5a;
+}

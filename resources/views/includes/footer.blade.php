@@ -4,7 +4,7 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="footer-info">
-                    <h3>Restaurantly</h3>
+                    <h3>BurgerTime</h3>
                     <p>
                         A108 Adam Street <br>
                         NY 535022, USA<br><br>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-lg-2 col-md-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4>Links Úteis</h4>
                 <ul>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Our Services</h4>
+                <h4>Nossos serviços</h4>
                 <ul>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
@@ -44,7 +44,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 footer-newsletter">
-                <h4>Our Newsletter</h4>
+                <h4>Boletim informativo</h4>
                 <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                 <form action="" method="post">
                     <input type="email" name="email"><input type="submit" value="Subscribe">
@@ -58,7 +58,7 @@
 
 <div class="container">
     <div class="copyright">
-        &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>BurgerTime</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->

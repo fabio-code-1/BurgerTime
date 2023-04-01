@@ -4,7 +4,7 @@
 
         <div class="section-title">
             <h2>Chefs</h2>
-            <p>Our Proffesional Chefs</p>
+            <p>Nossos Chefs Profissionais</p>
         </div>
 
         <div class="row">
