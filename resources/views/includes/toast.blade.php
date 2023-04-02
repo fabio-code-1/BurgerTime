@@ -1,5 +1,5 @@
 <!-- toats -->
-<div class="toast align-items-center bg-success mx-auto" role="alert" aria-live="assertive" aria-atomic="true" style="width: 300px;">
+<div class="toast align-items-center bg-success mx-5" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
         <div class="toast-body">
             {{ session('success') }}

@@ -97,7 +97,12 @@
 
         <div class="form-group row justify-content-center">
             <div class="col-sm-8">
+                @if ($endereco)
                 <button type="submit" class="btn btn-primary {{ count($cartItems) == 0 ? 'disabled' : '' }} mt-3 mb-5">Enviar pedido</button>
+                @else
+                <p class="mt-3 bg-dark text-warning">Você precisa cadastrar um endereço antes de enviar o pedido.</p>
+                @endif
+
             </div>
         </div>
     </form>

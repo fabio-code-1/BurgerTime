@@ -77,7 +77,8 @@
     <main id="main">
         <!-- toast -->
         @include('includes.toast')
-        
+
+
         @yield('content')
     </main>
 

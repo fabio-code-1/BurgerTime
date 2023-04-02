@@ -54,6 +54,12 @@
                 <x-button class="ml-4">
                     {{ __('Register') }}
                 </x-button>
+                <a href="/login" class="btn btn-light ml-4">
+                    {{ __('Login') }}
+                </a>
+                <a href="/" class="btn btn-light ml-4">
+                    {{ __('Home') }}
+                </a>
             </div>
         </form>
     </x-authentication-card>

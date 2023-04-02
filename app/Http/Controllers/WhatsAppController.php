@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Endereco;
+use Illuminate\Support\Facades\Auth;
 
 class WhatsAppController extends Controller
 {
