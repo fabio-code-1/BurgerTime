@@ -1,0 +1,17 @@
+@media screen and (max-width: 500px) {
+    table td, table th {
+      font-size: 12px;
+    }
+  }
+  
+/* Quando a largura da tela for menor ou igual a 500px, diminui o tamanho do botão */
+@media (max-width: 500px) {
+  .btn-excluir{
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+#carrinho-section{
+  background-color: #353129;
+}

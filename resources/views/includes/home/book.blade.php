@@ -1,5 +1,5 @@
 <!-- ======= Book A Table Section ======= -->
-<section id="book-a-table" class="book-a-table">
+<section id="book-a-table" class="book-a-table"  style="display:none">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">

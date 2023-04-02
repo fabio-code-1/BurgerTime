@@ -33,6 +33,9 @@
     <!--modal -->
     <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
 
+    <!--dashboard -->
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+
 </head>
 
 <body>
@@ -42,8 +45,8 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
 
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-phone d-flex align-items-center"><span>+1 5589 55488 55</span></i>
-                <i class="bi bi-clock d-flex align-items-center ms-4"><span> Mon-Sat: 11AM - 23PM</span></i>
+                <i class="bi bi-phone d-flex align-items-center"><span>+55 11 98194-7276 </span></i>
+                <i class="bi bi-clock d-flex align-items-center ms-4"><span>Seg-Sáb: 11h - 23h</span></i>
             </div>
 
             <div class="languages d-none d-md-flex align-items-center">

@@ -8,7 +8,7 @@
 
                 <div class="btns">
                     <a href="#menu" class="btn-menu animated fadeInUp scrollto">cardápio</a>
-                    <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Reservar Mesa</a>
+                    <!-- <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Reservar Mesa</a> -->
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">

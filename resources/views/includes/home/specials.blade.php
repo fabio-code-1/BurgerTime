@@ -1,5 +1,5 @@
  <!-- ======= Specials Section ======= -->
- <section id="specials" class="specials">
+ <section id="specials" class="specials" style="display:none">
      <div class="container" data-aos="fade-up">
 
          <div class="section-title">

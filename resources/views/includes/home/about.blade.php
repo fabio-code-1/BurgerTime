@@ -9,20 +9,22 @@
                 </div>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                <h3>Bem-vindo à nossa hamburgueria artesanal!</h3>
                 <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
+                    Aqui, nós levamos a sério o sabor e a qualidade dos nossos hambúrgueres. Cada ingrediente é cuidadosamente selecionado
+                    e preparado para oferecer a você uma experiência única.
                 </p>
                 <ul>
-                    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                    <li><i class="bi bi-check-circle"></i> Nossos hambúrgueres são feitos com carne 100% bovina, sem adição de conservantes ou
+                        corantes artificiais.</li>
+                    <li><i class="bi bi-check-circle"></i> Preparamos nossos molhos e acompanhamentos diariamente, utilizando ingredientes frescos e de
+                        qualidade.</li>
+                    <li><i class="bi bi-check-circle"></i> Nossos pães são assados na hora, para garantir que você receba um hambúrguer quentinho e
+                        crocante.</li>
                 </ul>
                 <p>
-                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum
+                    Nossa equipe está comprometida em fornecer um excelente atendimento ao cliente e garantir que sua experiência em nossa
+                    hamburgueria seja a melhor possível. Esperamos vê-lo em breve!
                 </p>
             </div>
         </div>

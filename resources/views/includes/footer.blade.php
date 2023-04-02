@@ -6,10 +6,10 @@
                 <div class="footer-info">
                     <h3>BurgerTime</h3>
                     <p>
-                        A108 Adam Street <br>
-                        NY 535022, USA<br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        R otaviano piza, 186 <br>
+                        Barueri, BR<br><br>
+                        <strong>Telefone:</strong> +55 11 98194-7276<br>
+                        <strong>Email:</strong> Fabiodesenvolvedorpro@gmail.com<br>
                     </p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -46,7 +46,7 @@
             <div class="col-lg-4 col-md-6 footer-newsletter">
                 <h4>Boletim informativo</h4>
                 <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                <form action="" method="post">
+                <form action="" method="post" style="display: none;">
                     <input type="email" name="email"><input type="submit" value="Subscribe">
                 </form>
 
@@ -65,6 +65,6 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="#">FabioSetubal</a>
     </div>
 </div>

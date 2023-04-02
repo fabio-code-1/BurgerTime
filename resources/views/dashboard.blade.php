@@ -2,45 +2,45 @@
 
 @section('content')
 
-
-
-<div style="margin-top: 10%;"></div>
+<div style="height: 140px; width:100%; background:#1a1814;"></div>
 
 @if(isset($endereco))
-<h4>
-    Seu Endereço:
-</h4>
-<p>{{ $endereco->rua }}, {{ $endereco->numero }}, {{ $endereco->complemento }}</p>
-<p>{{ $endereco->cidade }} - {{ $endereco->estado }}, {{ $endereco->cep }}</p>
-<!-- Exibindo o valor do frete -->
-<p>Valor do frete: R$ {{ number_format($endereco->frete, 2, ',', '.') }}</p>
-
-<a href="{{ route('endereco.edit', ['id' => $endereco->id]) }}">Editar Endereço</a>
+<div class="text-center mx-auto mb-5 mt-3">
+    <h4>Seu Endereço:</h4>
+    <p class="small">{{ $endereco->rua }}, {{ $endereco->numero }}, {{ $endereco->complemento }}</p>
+    <p class="small">{{ $endereco->cidade }} - {{ $endereco->estado }}, {{ $endereco->cep }}</p>
+    <p class="small">Valor do frete: R$ {{ number_format($endereco->frete, 2, ',', '.') }}</p>
+    <a href="{{ route('endereco.edit', ['id' => $endereco->id]) }}">Editar Endereço</a>
+</div>
 @else
-<h4>
+<h4 class="text-center mb-5">
     Cadastrar Endereço
     <a href="{{ route('endereco.create') }}">clique aqui!</a>
 </h4>
 @endif
 
 
+<section id="carrinho-section">
+    <h2 class="text-center mb-3">Carrinho</h2>
+    <div class="cart-user">
+        @if(count($cartItems) > 0)
+        <div class="text-center">
+            <a href="{{ route('cart.delete') }}" class="cart__clear">Apagar todos os itens do carrinho!</a>
+        </div>
 
-<h2 class="text-center mb-3">Carrinho</h2>
-<div class="cart-user">
-    @if(count($cartItems) > 0)
-        <a href="{{ route('cart.delete') }}" class="cart__clear">Apagar todos os itens do carrinho</a>
-        <table class="cart__table">
-            <thead>
-                <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($cartItems as $item)
+        <div class="d-flex justify-content-center">
+            <table class="table  text-light text-center" style="width: 1500px;">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($cartItems as $item)
                     <tr>
                         <td>{{ $item->product->name }}</td>
                         <td>R$ {{ number_format($item->product->price, 2, ',', '.') }}</td>
@@ -50,44 +50,59 @@
                             <form method="POST" action="{{ route('cart.deleteOne', $item->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Excluir</button>
+                                <button type="submit" class="btn btn-danger btn-excluir">Excluir</button>
                             </form>
                         </td>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-    <p class="alert alert-info text-center">Carrinho está vazio</p>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+
+
+        @else
+        <p class="alert alert-info text-center">Carrinho está vazio</p>
+        @endif
+    </div>
+
+
+
+    @if($cartItems->isNotEmpty())
+    <h6 class="text-center">Total da compra: R$ {{ number_format($totalPrice, 2, ',', '.') }}</h6>
     @endif
-</div>
 
 
-@if($cartItems->isNotEmpty())
-<h2>Total da compra: {{ $totalPrice }}</h2>
-@endif
+    <form method="get" action="{{ route('whatsapp.send') }}" target="_blank" formtarget="_blank" id="checkout-form" class="text-center mt-5">
+        <div class="form-group row justify-content-center">
+            <label for="payment_method" class="col-sm-2 col-form-label"><abbr title="A forma de pagamento só pode ser liberado sem conter algo no carrinho!" class="initialism">Forma de pagamento</abbr></label>
+            <div class="col-sm-6">
+                <select class="form-select" id="payment_method" name="payment_method" {{ count($cartItems) == 0 ? 'disabled' : '' }}>
+                    <option value="credit_card">Cartão de crédito</option>
+                    <option value="debit_card">Cartão de débito</option>
+                    <option value="pix">PIX</option>
+                    <option value="cash">Dinheiro</option>
+                </select>
 
 
-<form method="get" action="{{ route('whatsapp.send') }}" target="_blank" formtarget="_blank" id="checkout-form">
-    <!-- Seleção de forma de pagamento -->
-    <label for="payment_method">Forma de pagamento</label>
-    <select class="form-control" id="payment_method" name="payment_method">
-        <option value="credit_card">Cartão de crédito</option>
-        <option value="debit_card">Cartão de débito</option>
-        <option value="pix">PIX</option>
-        <option value="cash">Dinheiro</option>
-    </select>
-    <!-- Campo para informação do troco -->
-    <label for="change_amount_input" style="display: none;">Total em dinheiro:</label>
-    <input type="number" step="0.01" min="0" class="form-control money-input" id="change_amount_input" name="change_amount" style="display: none;" data-total-price="{{ $totalPrice }}">
+            </div>
+        </div>
 
+        <div class="form-group row justify-content-center">
+            <label for="change_amount_input" class="col-sm-2 col-form-label" style="display: none;">Total em dinheiro:</label>
+            <div class="col-sm-6">
+                <input type="number" step="0.01" min="0" class="form-control money-input" id="change_amount_input" name="change_amount" style="display: none;" data-total-price="{{ $totalPrice }}">
+            </div>
+        </div>
 
-    <br>
+        <div class="form-group row justify-content-center">
+            <div class="col-sm-8">
+                <button type="submit" class="btn btn-primary {{ count($cartItems) == 0 ? 'disabled' : '' }} mt-3 mb-5">Enviar pedido</button>
+            </div>
+        </div>
+    </form>
 
-    <button type="submit" class="btn btn-primary {{ count($cartItems) == 0 ? 'disabled' : '' }}">Enviar pedido</button>
-
-</form>
-
+</section>
 
 <script>
     const successMessage = '{{ session("success") }}';

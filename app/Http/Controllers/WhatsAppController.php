@@ -61,8 +61,8 @@ class WhatsAppController extends Controller
         $productsText .= $changeText . "*Taxa de entrega:* R$ " . number_format($tax, 2, ',', '.') . $addressText .
             "\n\n*Receber a Entrega*: " . auth()->user()->name . "\n\nObrigado!";
 
-        // Envia a mensagem para o WhatsApp
-        $whatsappUrl = 'https://api.whatsapp.com/send?phone=5511986422678&text=' . urlencode($productsText);
+        // Envia a mensagem para o WhatsApp +5511981947276
+        $whatsappUrl = 'https://api.whatsapp.com/send?phone=5511981947276&text=' . urlencode($productsText);
 
         // Redireciona para a URL do WhatsApp
         return redirect()->away($whatsappUrl);

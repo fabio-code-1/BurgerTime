@@ -7,17 +7,17 @@
   <nav id="navbar" class="navbar order-last order-lg-0">
     <ul>
       <li><li><a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}" href="{{ request()->is('/') ? '#hero' : '/' }}">Home</a></li></li>
-      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#about' : '/' }}" onclick="scrollToSection(event, 'about')">About</a></li>
+      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#about' : '/' }}" onclick="scrollToSection(event, 'about')">Sobre</a></li>
       <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#menu' : '/' }}" onclick="scrollToSection(event, 'menu')">Menu</a></li>
-      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#specials' : '/' }}" onclick="scrollToSection(event, 'specials')">Specials</a></li>
-      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#events' : '/' }}" onclick="scrollToSection(event, 'events')">Events</a></li>
+      <!-- <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#specials' : '/' }}" onclick="scrollToSection(event, 'specials')">Especiais</a></li> -->
+      <!-- <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#events' : '/' }}" onclick="scrollToSection(event, 'events')">Eventos</a></li> -->
       <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#chefs' : '/' }}" onclick="scrollToSection(event, 'chefs')">Chefs</a></li>
       <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#gallery' : '/' }}" onclick="scrollToSection(event, 'gallery')">Gallery</a></li>
-      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#contact' : '/' }}" onclick="scrollToSection(event, 'contact')">Contact</a></li>
+      <li><a class="nav-link scrollto" href="{{ request()->is('/') ? '#contact' : '/' }}" onclick="scrollToSection(event, 'contact')">Contato</a></li>
       
       @auth
       <li>
-        <a class="nav-link scrollto" href="/dashboard">Dashboard</a>
+        <a class="nav-link scrollto" href="/dashboard">Perfil</a>
       </li>
       <li>
         <form method="POST" action="{{ route('logout') }}">
@@ -39,7 +39,7 @@
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
   </nav><!-- .navbar -->
-  <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a>
+  <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Reservar</a> -->
 
 </div>
 

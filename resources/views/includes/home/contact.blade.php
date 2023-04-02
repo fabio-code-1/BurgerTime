@@ -1,5 +1,5 @@
 <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
+<section id="contact" class="contact"  >
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -21,28 +21,28 @@
                     <div class="address">
                         <i class="bi bi-geo-alt"></i>
                         <h4>Location:</h4>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <p>Rua Otaviano Piza, 186</p>
                     </div>
 
                     <div class="open-hours">
                         <i class="bi bi-clock"></i>
                         <h4>Open Hours:</h4>
                         <p>
-                            Monday-Saturday:<br>
-                            11:00 AM - 2300 PM
+                            Segunda-Sabado:<br>
+                             11h - 23h PM
                         </p>
                     </div>
 
                     <div class="email">
                         <i class="bi bi-envelope"></i>
                         <h4>Email:</h4>
-                        <p>info@example.com</p>
+                        <p>fabiodesenvolvedorpro@gmail.com</p>
                     </div>
 
                     <div class="phone">
                         <i class="bi bi-phone"></i>
                         <h4>Call:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <p>+55 11 98194-7276</p>
                     </div>
 
                 </div>
@@ -51,7 +51,7 @@
 
             <div class="col-lg-8 mt-5 mt-lg-0">
 
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form" style="display:none">
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>

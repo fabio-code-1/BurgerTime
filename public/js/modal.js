@@ -7,7 +7,7 @@ $('#productModal').on('show.bs.modal', function (event) {
     var product_description = button.data('description')
     var modal = $(this)
     modal.find('.product-name').text(product_name)
-    modal.find('.product-price').text(product_price)
+    modal.find('.product-price').text(product_price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
     modal.find('.product-description').text(product_description)
     modal.find('.menu-img').attr('src', product_image)
     modal.find('#product_id').val(product_id)

@@ -1,5 +1,5 @@
 <!-- ======= Events Section ======= -->
-<section id="events" class="events">
+<section id="events" class="events"  style="display:none">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">

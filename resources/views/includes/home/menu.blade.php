@@ -9,10 +9,10 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 d-flex justify-content-center">
                 <ul id="menu-flters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-starters">Starters</li>
-                    <li data-filter=".filter-salads">Salads</li>
-                    <li data-filter=".filter-specialty">Specialty</li>
+                    <li data-filter="*" class="filter-active">Tudo</li>
+                    <li data-filter=".filter-snack">Lanches</li>
+                    <li data-filter=".filter-drink">Refrigerantes</li>
+                    <li data-filter=".filter-specialty">Combos</li>
                 </ul>
             </div>
         </div>
