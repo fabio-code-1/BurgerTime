@@ -13,7 +13,7 @@
     <a href="{{ route('endereco.edit', ['id' => $endereco->id]) }}">Editar Endereço</a>
 </div>
 @else
-<h4 class="text-center mb-5">
+<h4 class="text-center mb-5 mt-5">
     Cadastrar Endereço
     <a href="{{ route('endereco.create') }}">clique aqui!</a>
 </h4>
@@ -75,7 +75,7 @@
 
     <form method="get" action="{{ route('whatsapp.send') }}" target="_blank" formtarget="_blank" id="checkout-form" class="text-center mt-5">
         <div class="form-group row justify-content-center">
-            <label for="payment_method" class="col-sm-2 col-form-label"><abbr title="A forma de pagamento só pode ser liberado sem conter algo no carrinho!" class="initialism">Forma de pagamento</abbr></label>
+            <label for="payment_method" class="col-sm-2 col-form-label"><abbr title="A forma de pagamento só pode ser liberada se houver algo no carrinho!" class="initialism">Forma de pagamento</abbr></label>
             <div class="col-sm-6">
                 <select class="form-select" id="payment_method" name="payment_method" {{ count($cartItems) == 0 ? 'disabled' : '' }}>
                     <option value="credit_card">Cartão de crédito</option>
@@ -91,7 +91,7 @@
         <div class="form-group row justify-content-center">
             <label for="change_amount_input" class="col-sm-2 col-form-label" style="display: none;">Total em dinheiro:</label>
             <div class="col-sm-6">
-                <input type="number" step="0.01" min="0" class="form-control money-input" id="change_amount_input" name="change_amount" style="display: none;" data-total-price="{{ $totalPrice }}">
+                <input type="number" step="0.01" min="0" class="form-control money-input mt-2" id="change_amount_input" name="change_amount" style="display: none;" data-total-price="{{ $totalPrice }}" placeholder="Exemplo: 100">
             </div>
         </div>
 
