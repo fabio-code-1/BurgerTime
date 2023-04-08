@@ -52,7 +52,7 @@ utilizei o framework Bootstrap para auxiliar na criação do design responsivo d
 1. Clone este repositório em seu computador local usando o Git:
 
 ~~~git
-git clone https://github.com/seunome/burgertime.git
+git clone https://github.com/fabio-code-1/BurgerTime
 ~~~
 
 2. Instale as dependências do projeto utilizando o Composer:
