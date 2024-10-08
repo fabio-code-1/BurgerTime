@@ -152,7 +152,7 @@ php artisan serve
 ## Author
 Este projeto foi desenvolvido por _Fabio Setubal_.
 
-Se tiver alguma dúvida, entre em contato pelo fabiodesenvolvedorpro@gmail.com.
-* Instagram - <https://www.instagram.com/m.s.j_desenvolvedor/>
+Se tiver alguma dúvida, entre em contato pelo fabiodesenvolvedor7@gmail.com.
+* Instagram - <https://www.instagram.com/mastter_codes?igsh=YnZ2dHFwNHpkb3do/>
 
 [voltar inicio](#burgertime)
